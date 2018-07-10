@@ -3,7 +3,7 @@ require 'yaml'
 module Rundock
   module Builder
     class DefaultSshBuilder < Base
-      RUNDOCK_PACKAGE_PATH = Gem::Specification.find_by_path('rundock')
+      RUNDOCK_PACKAGE_PATH = Gem::Specification.find_by_name('rundock')
       PRESET_SSH_OPTIONS_DEFAULT_ROOT = RUNDOCK_PACKAGE_PATH.nil? ? '.' : RUNDOCK_PACKAGE_PATH.full_gem_path
       PRESET_SSH_OPTIONS_DEFAULT_FILE_PATH = "#{PRESET_SSH_OPTIONS_DEFAULT_ROOT}/default_ssh.yml"
       HOME_SSH_OPTIONS_DEFAULT_FILE_PATH = "#{Dir.home}/default_ssh.yml"
